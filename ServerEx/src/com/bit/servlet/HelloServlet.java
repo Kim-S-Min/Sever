@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 //	Servlet은 HttpServlet을 상속 받아 필요한 메서드를 Override한다
+//	url-patton="/hs"
 public class HelloServlet extends HttpServlet {
 
 	@Override
@@ -27,6 +28,26 @@ public class HelloServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>Hello, Servlet</h1>");
 		out.println("<p>Hello, " + name + "</p>");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//	POST방식 요청을 처리하기 위한 메서드
+		//	폼으로 전송된 파라미터 받아오기
+		//	폼의 입력데이터의 인코딩을 맞춰준다
+		req.setCharacterEncoding("UTF-8");
+		//		폼 내의 input태크의 name 속성
+		String firstName = req.getParameter("first_name");
+		String lastName = req.getParameter("last_name");
+		
+		//	응답 객체에서 Writer 얻어온다
+		//	응답되는 데이터가 text/html임을 브라우저에게 알림
+		resp.setContentType("text/html;charset=UTF-8");
+		
+		PrintWriter out = resp.getWriter();
+		out.println("<h1>Form Data</h1>");
+		out.println("<p>성:" + lastName + "</p>");
+		out.println("<p>이름:" + firstName + "</p>");
 	}
 	
 }
