@@ -66,7 +66,6 @@ public class LifecycleServlet extends HttpServlet {
 	@Override
 	public void destroy() {
 		// 서버가 중단되거나 오랜시간동안 서블릿 요청이 없을 때 -> 서블릿의 자원 정리
-		super.destroy();
 		System.out.println("Lifcycle: destroy()");
 	}	
 }
