@@ -19,9 +19,9 @@ VALUES(seq_emaillist_pk.NEXTVAL,
         
 INSERT INTO emaillist
 VALUES(seq_emaillist_pk.NEXTVAL,
-        '홍',
+        '고',
         '길동',
-        'hong@hwalbin.org',
+        'go@gil.dong',
         sysdate);
         
 SELECT * FROM emaillist;
