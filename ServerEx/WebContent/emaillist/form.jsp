@@ -28,6 +28,6 @@
 	<p>
 		<a href="index.jsp">목록</a>
 	</p>
-<
+
 </body>
 </html>
